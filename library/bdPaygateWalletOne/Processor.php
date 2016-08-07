@@ -124,14 +124,14 @@ class bdPaygateWalletOne_Processor extends bdPaygate_Processor_Abstract
         }
 
         $payment = array(
-            'PAYMENT_ITEM' => $itemId,
-            'WMI_DESCRIPTION' => "BASE64:" . base64_encode($itemName),
-            'WMI_PAYMENT_AMOUNT' => $amount,
-            'WMI_CURRENCY_ID' => $currency_id,
-            'WMI_MERCHANT_ID' => $options->bdPaygateWalletOne_ID,
-            'WMI_SUCCESS_URL' => $options->bdPaygateWalletOne_SuccessUrl,
-            'WMI_FAIL_URL' => $options->bdPaygateWalletOne_FailUrl,
-            '_csrfToken' => $visitor['csrf_token_page'],
+            'PAYMENT_ITEM'          => $itemId,
+            'WMI_DESCRIPTION'       => "BASE64:" . base64_encode($itemName),
+            'WMI_PAYMENT_AMOUNT'    => $amount,
+            'WMI_CURRENCY_ID'       => $currency_id,
+            'WMI_MERCHANT_ID'       => $options->bdPaygateWalletOne_ID,
+            'WMI_SUCCESS_URL'       => $options->bdPaygateWalletOne_SuccessUrl,
+            'WMI_FAIL_URL'          => $options->bdPaygateWalletOne_FailUrl,
+            '_csrfToken'            => $visitor['csrf_token_page'],
         );
 
         /// Генерация MD5 подписи для формы

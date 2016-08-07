@@ -13,12 +13,12 @@ class bdPaygateWalletOne_bdPaygate_Model_Processor extends XFCP_bdPaygateWalletO
         return $currencies;
     }
 
-	public function getProcessorNames()
-	{
-		$names = parent::getProcessorNames();
-		
-		$names['walletone'] = 'bdPaygateWalletOne_Processor';
-		
-		return $names;
-	}
+    public function getProcessorNames()
+    {
+        $names = parent::getProcessorNames();
+
+        $names['walletone'] = 'bdPaygateWalletOne_Processor';
+
+        return $names;
+    }
 }
