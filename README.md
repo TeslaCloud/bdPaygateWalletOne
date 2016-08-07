@@ -12,7 +12,7 @@
  * Выберите Метод формирования ЭЦП "MD5"
  * Укажите URL скрипта в формате 'http://domain.com/bdpaygate/callback.php?p=walletone'. Тип запроса должен быть "POST".
 * Все должено быть примерно так:
-![Image](https://matew.pw/screens/clip-2016-08-07-23-02-29-12044920.png)
+![Image](https://matew.pw/screens/clip-2016-08-07-23-13-48-44676571.png)
 
 ### Настройка XenForo
 
