@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<addon addon_id="bdPaygateWalletOne" title="[bd] Paygates: WalletOne" version_string="1.0.0" version_id="6" url="https://teslacloud.net" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+<addon addon_id="bdPaygateWalletOne" title="[bd] Paygates: WalletOne" version_string="1.1" version_id="7" url="https://teslacloud.net" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
   <admin_navigation/>
   <admin_permissions/>
   <admin_style_properties/>
@@ -33,12 +33,6 @@
       <sub_options></sub_options>
       <relation group_id="bdPaygateWalletOne" display_order="20"/>
     </option>
-    <option option_id="bdPaygateWalletOne_SuccessUrl" edit_format="textbox" data_type="string" can_backup="1">
-      <default_value></default_value>
-      <edit_format_params></edit_format_params>
-      <sub_options></sub_options>
-      <relation group_id="bdPaygateWalletOne" display_order="30"/>
-    </option>
   </optiongroups>
   <permissions>
     <permission_groups/>
@@ -53,8 +47,6 @@
     <phrase title="option_bdPaygateWalletOne_ID_explain" version_id="6" version_string="1.0"><![CDATA[WalletOne]]></phrase>
     <phrase title="option_bdPaygateWalletOne_SecretKey" version_id="6" version_string="1.0"><![CDATA[Secret Key(MD5)]]></phrase>
     <phrase title="option_bdPaygateWalletOne_SecretKey_explain" version_id="6" version_string="1.0"><![CDATA[WalletOne]]></phrase>
-    <phrase title="option_bdPaygateWalletOne_SuccessUrl" version_id="6" version_string="1.0"><![CDATA[Success URL]]></phrase>
-    <phrase title="option_bdPaygateWalletOne_SuccessUrl_explain" version_id="6" version_string="1.0"><![CDATA[WalletOne. Merchant will redirect using POST request]]></phrase>
     <phrase title="option_group_bdPaygateWalletOne" version_id="6" version_string="1.0"><![CDATA[[bd] Paygates: WalletOne]]></phrase>
     <phrase title="option_group_bdPaygateWalletOne_description" version_id="6" version_string="1.0"><![CDATA[]]></phrase>
   </phrases>

@@ -7,6 +7,4 @@
   <phrase title="option_bdPaygateWalletOne_ID_explain" addon_id="bdPaygateWalletOne" version_id="6" version_string="1.0"><![CDATA[WalletOne]]></phrase>
   <phrase title="option_bdPaygateWalletOne_SecretKey" addon_id="bdPaygateWalletOne" version_id="6" version_string="1.0"><![CDATA[Секретный ключ(MD5)]]></phrase>
   <phrase title="option_bdPaygateWalletOne_SecretKey_explain" addon_id="bdPaygateWalletOne" version_id="6" version_string="1.0"><![CDATA[WalletOne]]></phrase>
-  <phrase title="option_bdPaygateWalletOne_SuccessUrl" addon_id="bdPaygateWalletOne" version_id="6" version_string="1.0"><![CDATA[URL успешной оплаты]]></phrase>
-  <phrase title="option_bdPaygateWalletOne_SuccessUrl_explain" addon_id="bdPaygateWalletOne" version_id="6" version_string="1.0"><![CDATA[WalletOne. Единая касса перенаправит POST запросом на этот адрес]]></phrase>
 </language>

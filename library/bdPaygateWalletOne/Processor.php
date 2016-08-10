@@ -129,7 +129,7 @@ class bdPaygateWalletOne_Processor extends bdPaygate_Processor_Abstract
             'WMI_PAYMENT_AMOUNT'    => $amount,
             'WMI_CURRENCY_ID'       => $currency_id,
             'WMI_MERCHANT_ID'       => $options->bdPaygateWalletOne_ID,
-            'WMI_SUCCESS_URL'       => $options->bdPaygateWalletOne_SuccessUrl,
+            'WMI_SUCCESS_URL'       => $extraData['returnUrl'],
             'WMI_FAIL_URL'          => $options->bdPaygateWalletOne_FailUrl,
             '_csrfToken'            => $visitor['csrf_token_page'],
         );
@@ -140,23 +140,14 @@ class bdPaygateWalletOne_Processor extends bdPaygate_Processor_Abstract
         // Конкатенация значений
         $crc = implode($payment);
         // Кодирование MD5 хэша в BASE64
-        $crc = base64_encode(pack("H*", md5($crc . $walletone_key)));;
+        $payment['WMI_SIGNATURE'] = base64_encode(pack("H*", md5($crc.$walletone_key)));
 
-        $form = <<<EOF
-            <form action="{$formAction}" method="POST">
-                <input type="hidden" name="WMI_MERCHANT_ID"     value="{$payment['WMI_MERCHANT_ID']}" />
-                <input type="hidden" name="PAYMENT_ITEM"        value="{$payment['PAYMENT_ITEM']}" />
-                <input type="hidden" name="WMI_DESCRIPTION"     value="{$payment['WMI_DESCRIPTION']}" />
-                <input type="hidden" name="WMI_PAYMENT_AMOUNT"  value="{$payment['WMI_PAYMENT_AMOUNT']}" />
-                <input type="hidden" name="WMI_CURRENCY_ID"     value="{$payment['WMI_CURRENCY_ID']}" />
-                <input type="hidden" name="WMI_SUCCESS_URL"     value="{$payment['WMI_SUCCESS_URL']}" />
-                <input type="hidden" name="WMI_FAIL_URL"        value="{$payment['WMI_FAIL_URL']}" />
-                <input type="hidden" name="WMI_SIGNATURE"       value="{$crc}" />
-                <input type="hidden" name="_csrfToken"          value="{$payment['_csrfToken']}" />
-                
-                <input type="submit" value="{$callToAction}" class="button" />
-            </form>
-EOF;
+        // Генерация формы
+        $form = "<form action='{$formAction}' method='POST'>";
+        foreach ($payment as $item => $value){
+            $form .= "<input type='hidden' name='$item' value='$value' />";
+        }
+        $form .= "<input type='submit' value='{$callToAction}' class='button'/></form>";
 
         return $form;
     }
