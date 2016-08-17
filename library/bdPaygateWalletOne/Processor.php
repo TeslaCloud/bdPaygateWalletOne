@@ -130,7 +130,6 @@ class bdPaygateWalletOne_Processor extends bdPaygate_Processor_Abstract
             'WMI_CURRENCY_ID'       => $currency_id,
             'WMI_MERCHANT_ID'       => $options->bdPaygateWalletOne_ID,
             'WMI_SUCCESS_URL'       => $extraData['returnUrl'],
-            'WMI_FAIL_URL'          => $options->bdPaygateWalletOne_FailUrl,
             '_csrfToken'            => $visitor['csrf_token_page'],
         );
 
@@ -143,11 +142,11 @@ class bdPaygateWalletOne_Processor extends bdPaygate_Processor_Abstract
         $payment['WMI_SIGNATURE'] = base64_encode(pack("H*", md5($crc.$walletone_key)));
 
         // Генерация формы
-        $form = "<form action='{$formAction}' method='POST'>";
+        $form = "<form action=\"{$formAction}\" method=\"POST\">";
         foreach ($payment as $item => $value){
-            $form .= "<input type='hidden' name='$item' value='$value' />";
+            $form .= "<input type=\"hidden\" name=\"$item\" value=\"$value\" />";
         }
-        $form .= "<input type='submit' value='{$callToAction}' class='button'/></form>";
+        $form .= "<input type=\"submit\" value=\"{$callToAction}\" class=\"button\"/></form>";
 
         return $form;
     }
